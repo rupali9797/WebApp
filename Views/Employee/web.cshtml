@@ -1,0 +1,38 @@
+﻿@using WebApp.Controllers
+
+@model HtmlHelperModel
+@{
+    ViewBag.Title = "web";
+}
+
+
+<h2>web</h2>
+@Html.BeginForm()
+{
+
+    @Html.ActionLink("List Employee", "index")
+    <br />
+
+    @Html.LabelFor(model => model.Details) : @Html.TextAreaFor(model => model.Details)
+    <br />
+    @Html.HiddenFor(model => model.Id)
+    <br />
+
+    @Html.LabelFor(model => model.Details) : @Html.PasswordFor(model => model.Details)
+    <br />
+
+    @Html.LabelFor(model => model.mood)
+    <br /><nbsp></nbsp>
+    @Html.Label("Happy"): @Html.RadioButtonFor(model => model.mood,"Happy")
+    @Html.Label("Sad"): @Html.RadioButtonFor(model => model.mood,"Sad")
+    @Html.Label("Dont Know"): @Html.RadioButtonFor(model => model.mood,"Dont Know")
+
+
+    <br />
+    @Html.LabelFor(model => model.Id) : @Html.TextBoxFor(model => model.Id)
+    <br />
+    @Html.LabelFor(model => model.isActive) : @Html.CheckBoxFor(model => model.isActive)
+
+    <input type="submit" value="Save" />
+
+}
